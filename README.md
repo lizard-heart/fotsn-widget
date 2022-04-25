@@ -10,4 +10,4 @@ Here is what it looks like:
 - paste in the script.js file
 - go to the homescreen and add widget
 - edit widget
-- set script to whatever you named the one you 
+- set script to whatever you named the one you created
