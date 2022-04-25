@@ -1,0 +1,12 @@
+{
+  "always_run_in_app" : false,
+  "icon" : {
+    "color" : "gray",
+    "glyph" : "magic"
+  },
+  "name" : "Matt vs. Steve",
+  "script" : "const data = await (new Request('https:\/\/stevemould.com\/api')).loadJSON()\n\n\nconst w = new ListWidget()\n\nconst bg = new LinearGradient()\nbg.colors = [new Color('#ffa300'), new Color('#f7dc66'),new Color('#f7dc66'),new Color('#ffa300'),]\nbg.locations = [0,0.25,0.75,1]\n\nconst textColor = new Color('#1c394c')\nconst nameFont = Font.headline()\nconst titleFont = Font.regularSystemFont(9)\n\n\nw.backgroundGradient = bg\n\nw.addSpacer()\n\nconst kct1 = w.addText('Steve has')\nkct1.centerAlignText()\nkct1.font = titleFont\nkct1.textColor = textColor \n\nconst kc = w.addText(String((-1)*data.subsData.countDiff))\nkc.centerAlignText()\nkc.font = nameFont\nkc.textColor = textColor \n\nconst kct = w.addText('more subscribers than Matt')\nkct.centerAlignText()\nkct.font = titleFont\nkct.textColor = textColor \n\n\nw.addSpacer(8)\n\nconst act1 = w.addText('and')\nact1.centerAlignText()\nact1.font = titleFont\nact1.textColor = textColor \n\n\nconst ac = w.addText(String((-1)*data.viewsData.countDiff))\nac.centerAlignText()\nac.font = nameFont\nac.textColor = textColor \n\nconst act = w.addText('more views')\nact.centerAlignText()\nact.font = titleFont\nact.textColor = textColor \n\nw.addSpacer(8)\n\nconst ac2 = w.addText(\"Subscriber ratio: \"+String(data.viewsData.SteveCount\/data.viewsData.MattCount))\nac2.centerAlignText()\nac2.font = nameFont\nac2.textColor = textColor \n\nw.addSpacer()\nw.presentSmall()\n\nScript.setWidget(w)\n",
+  "share_sheet_inputs" : [
+
+  ]
+}
